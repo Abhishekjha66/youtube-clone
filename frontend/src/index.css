@@ -1,0 +1,205 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+header.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #202020;
+  padding: 10px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 60px; /* FIX */
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  width: 350px;
+  background: #121212;
+  border: 1px solid #303030;
+  border-radius: 20px;
+  color: white;
+}
+
+.search-btn {
+  margin-left: 6px;
+  padding: 8px;
+  background: #303030;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+.sidebar {
+  width: 230px;
+  background: #181818;
+  height: calc(100vh - 60px);
+  padding: 20px 16px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-item {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.sidebar-item:hover {
+  background: #303030;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+.main-content {
+  margin-left: 230px;   /* leave space for sidebar */
+  padding: 20px;
+  margin-top: 20px;     /* FIX for filters & grid */
+  width: calc(100% - 230px);
+}
+
+/* ========================================
+   FILTER BAR
+======================================== */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  padding: 6px 12px;
+  background: #181818;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-bar button.active {
+  background: red;
+}
+
+/* ========================================
+   VIDEO GRID & CARDS
+======================================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px; /* FIX */
+}
+
+.video-card {
+  background: #181818;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.video-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.video-card h4 {
+  margin-top: 10px;
+}
+
+/* ========================================
+   AUTH PAGES
+======================================== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.auth-form {
+  width: 330px;
+  background: #202020;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 780px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 150px;
+  }
+}
